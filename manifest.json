@@ -1,0 +1,26 @@
+{
+   "content_scripts": [ {
+      "js": [ "jquery.min.js", "main.js"],
+      "matches": [
+         "*://www.baidu.com/*",
+         "*://news.baidu.com/*",
+         "*://mp3.baidu.com/*",
+         "*://image.baidu.com/*",
+         "*://video.baidu.com/*",
+         "*://map.baidu.com/*"
+      ],
+      "run_at": "document_end"
+   } ],
+   "web_accessible_resources": [
+      "icons/baidu48.png",
+      "icons/google48.png"
+   ],
+   "permissions": ["tabs", "storage", "contextMenus", "<all_urls>"],
+
+
+   "description": "搜索引擎帮手，整合google和百度，让他们变成一家人， 但不是将它们的搜索结果整合在一起！",
+   "manifest_version": 2,
+   "name": "Search Engine Integration",
+   "version": "1.0.1",
+   "minimum_chrome_version": "23"
+}
