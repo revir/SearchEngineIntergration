@@ -4,8 +4,8 @@
       "matches": [
          "*://www.baidu.com/*",
          "*://news.baidu.com/*",
-         "*://mp3.baidu.com/*",
          "*://image.baidu.com/*",
+         "*://v.baidu.com/*",
          "*://video.baidu.com/*",
          "*://map.baidu.com/*"
       ],

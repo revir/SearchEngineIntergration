@@ -45,7 +45,7 @@ bindSiteBtn = (wrapNode, engine, onclick)->
 
 
 handleBaidu = (engines)->
-  wrapSel = 'span.s_btn_wr'
+  wrapSel = 'span.s_btn_wr, span.bdv-search-btns, span.input_span'
   $(wrapSel).hide()
   genClickFunc = (engine)->
     return ()->
@@ -55,10 +55,15 @@ handleBaidu = (engines)->
   for engine in engines
     bindSiteBtn $(wrapSel).parent(), engine, genClickFunc(engine)
 
+handleGoogle = (engines)->
+
+
 urlHandlers = {
   '.*www.baidu.com\/s?': ()->handleBaidu(['baidu', 'google'])
   '.*news.baidu.com\/': ()->handleBaidu(['baidu_news', 'google_news'])
   '.*image.baidu.com\/': ()->handleBaidu(['baidu_image', 'google_image'])
+  '.*v(ideo)?.baidu.com\/': ()->handleBaidu(['baidu_video', 'google_video'])
+  '.*map.baidu.com\/': ()->handleBaidu(['baidu_map', 'google_map'])
 }
 
 searchUrlMapping = {
@@ -68,6 +73,10 @@ searchUrlMapping = {
   'google_news': 'https://www.google.com/search?tbm=nws&q='
   'baidu_image': 'http://image.baidu.com/i?word='
   'google_image': 'https://www.google.com/search?tbm=isch&q='
+  'baidu_video': 'http://v.baidu.com/v?word='
+  'google_video': 'https://www.google.com/search?tbm=vid&q='
+  'baidu_map': 'http://map.baidu.com/m?word='
+  'google_map': 'https://maps.google.com/maps?q='
 }
 
 main = ()->
